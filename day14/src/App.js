@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import Hero from './Hero'
+import CustomButton from './CustomButton'
+export default function App() {
+  let styles ={
+    color:"red",
+    backgroundColor:"black",
+    padding:"10px",
+    margin:"10px",
+    boarderRadius:"5px"
+  }
+  let btn1={...styles};
+  btn1.backgroundColor="violet"
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      This is demo
+      <Hero intro={"Welcome to our website!"} />
+      <Hero/>
+      {/* <Hero/>
+      <Hero/>
+      <Hero/>
+      <Hero/> */}
+      <CustomButton title={"login"} styles={styles} />
+      <CustomButton title={"Sign up"} styles={btn1} />
     </div>
-  );
+  )
 }
-
-export default App;
